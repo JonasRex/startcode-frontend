@@ -3,7 +3,14 @@ import SearchBox from "./SearchBox";
 import "../styles/Header.css";
 import { Outlet, NavLink, useNavigate } from "react-router-dom";
 
-const Header = ({ handleChange, loggedIn, role, setRole, setLoggedIn, facade }) => {
+const Header = ({
+  handleChange,
+  loggedIn,
+  role,
+  setRole,
+  setLoggedIn,
+  facade,
+}) => {
   const navigate = useNavigate();
 
   const logout = () => {
@@ -16,8 +23,7 @@ const Header = ({ handleChange, loggedIn, role, setRole, setLoggedIn, facade }) 
   return (
     <div>
       <header className="header-container">
-        {/*<SearchBox placeholder="Search database" handleChange={handleChange} /> */}
-
+       
         {role == "admin" ? (
           <NavLink to="/admin">
             <button className="btn" type="button">
@@ -25,7 +31,6 @@ const Header = ({ handleChange, loggedIn, role, setRole, setLoggedIn, facade }) 
             </button>
           </NavLink>
         ) : null}
-
         {role == "user" ? (
           <NavLink to="/user">
             <button className="btn" type="button">
@@ -33,8 +38,6 @@ const Header = ({ handleChange, loggedIn, role, setRole, setLoggedIn, facade }) 
             </button>
           </NavLink>
         ) : null}
-
-
         <NavLink to="/data">
           <button className="btn" type="button">
             Data
