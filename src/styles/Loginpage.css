@@ -53,3 +53,22 @@
   color: #fff;
 	transform: scale(1.02);
 }
+
+.login-signup-text {
+	padding-top: 25px;
+}
+
+.login-singup-btn {
+	padding-top: 5px;
+	text-decoration: underline;
+	color: #2f8dff;
+	font-size: large;
+	cursor: pointer;
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+	transition: transform 0.25s ease-out;
+}
+
+.login-singup-btn:hover {
+	transform: scale(1.09);
+}

@@ -34,6 +34,22 @@ function apiFacade() {
       });
   };
 
+  const signup = (user, password, password2, firstname, lastname, email) => {
+    const options = makeOptions("POST", true, {
+      userName: user,
+      password: password,
+      password2: password2,
+      firstName: firstname,
+      lastName: lastname,
+      email: email
+    });
+    return fetch(URL + "/api/signup", options)
+      .then(handleHttpErrors)
+      .then((res) => {
+        setToken(res.token);
+      });
+  };
+
   const fetchData = () => {
     const options = makeOptions("GET", true); //True add's the token
     return fetch(URL + "/api/info/user", options).then(handleHttpErrors);
@@ -66,6 +82,7 @@ function apiFacade() {
     getToken,
     loggedIn,
     login,
+    signup,
     logout,
     fetchData,
     fetchUsers
